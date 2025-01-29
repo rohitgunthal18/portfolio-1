@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Rohit dev</span>
+                <div class="logo-dot"></div>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">
+                    <span class="nav-icon"><i class="fas fa-home"></i></span>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="nav-icon"><i class="fas fa-user"></i></span>
+                    <span class="nav-text">About</span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <span class="nav-icon"><i class="fas fa-code"></i></span>
+                    <span class="nav-text">Projects</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                    <span class="nav-text">Contact</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-shape"></div>
+            <div class="hero-particles"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm <span class="accent-text">ROHIT GUNTHAL!</span></h1>
+            <p class="hero-subtitle">Aspiring Data Analyst | Web Developer</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button primary">View My Work</a>
+                <a href="#contact" class="cta-button secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+           <center><h2 class="section-title">About Me</h2></center>
+            
+            <div class="about-content">
+                <div class="about-image-wrapper">
+                    <div class="broken-glass-container">
+                        <canvas id="broken-glass-canvas"></canvas>
+                        <img src="profile1.jpg" alt="Profile Picture" class="about-image" id="profile-image">
+                        <div class="glass-overlay"></div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <div class="about-bio">
+                        <center><h3 class="bio-title">Data Analyst | Web Developer </h3></center>
+                        <p class="bio-description">Hi, I'm Rohit Gunthal, a computer science student who loves building full-stack software  and exploring the power of AI. With skills in Python, SQL, and web development, I enjoy creating projects that solve real-world problems and make life easier </p>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">11+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-label">nWork experience</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-container">
+                        <h3 class="skills-title">My Skills</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Frontend Development</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Backend Development</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>UI/UX Design</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-cta">
+                        <a href="#contact" class="cta-button primary">Hire Me</a>
+                        <a href="resume.pdf" class="cta-button secondary" download>Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="projects-container">
+        <center><h2 class="section-title">Featured Projects</h2></center>
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="mobile">Mobile App</button>
+            <button class="filter-btn" data-filter="ui">UI/UX</button>
+            <button class="filter-btn" data-filter="data-analytics">Data Analytics</button>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Project 1 - Ecertified Site -->
+<div class="project-card" data-category="web">
+    <div class="project-image-wrapper">
+        <img src="project1.jpg" alt="Ecertified Site" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="https://rohitgunthal18.github.io/ecertified/" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://github.com/rohitgunthal18/ecertified" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Ecertified - Career Development Platform</h3>
+        <p class="project-description">A comprehensive platform helping students discover certification programs, internships, and career-building courses with step-by-step guidance. Centralized resource for career development.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive Design</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <span>500+ Users</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 2 - Appointment Booking App -->
+<div class="project-card" data-category="web">
+    <div class="project-image-wrapper">
+        <img src="project2.jpg" alt="Appointment Booking App" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="https://rohitgunthal18.github.io/app/index.html" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Pathology Lab Appointment System</h3>
+        <p class="project-description">A web-based appointment booking system for pathology labs, streamlining patient checkup scheduling with backend management and real-time availability tracking.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-check-circle"></i>
+                <span>1000+ Bookings</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 3 - Notes Provider Site -->
+<div class="project-card" data-category="web">
+    <div class="project-image-wrapper">
+        <img src="project3.jpg" alt="Notes Provider Site" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">College Notes Repository</h3>
+        <p class="project-description">A centralized platform for college students to access and share study materials, featuring note upload/download functionality and organized course structure.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-book"></i>
+                <span>200+ Notes</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 4 - Product Showcase Website -->
+<div class="project-card" data-category="ui">
+    <div class="project-image-wrapper">
+        <img src="project4.jpg" alt="Product Showcase Website" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="https://rohitgunthal18.github.io/ebook/" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://github.com/rohitgunthal18/ebook/tree/main" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Single Page Product Showcase</h3>
+        <p class="project-description">A modern product presentation website with integrated payment gateway, featuring clean UI/UX design and seamless purchase experience.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Payment Gateway</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-shopping-cart"></i>
+                <span>50+ Sales</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 5 - Milk Farmers App -->
+<div class="project-card" data-category="mobile">
+    <div class="project-image-wrapper">
+        <img src="project5.jpg" alt="Milk Farmers App" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Milk Farmers Management System</h3>
+        <p class="project-description">An Android application for milk farmers to track sales, manage financial records, and analyze business performance with AI-powered insights.</p>
+        <div class="project-tech">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Android Studio</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">AI Integration</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-chart-line"></i>
+                <span>100+ Farmers</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 6 - IPL Dashboard -->
+<div class="project-card" data-category="data-analytics">
+    <div class="project-image-wrapper">
+        <img src="project6.jpg" alt="IPL Dashboard" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">IPL Analytics Dashboard</h3>
+        <p class="project-description">A comprehensive PowerBI dashboard for IPL performance analysis, featuring player statistics, team comparisons, and historical data visualization.</p>
+        <div class="project-tech">
+            <span class="tech-tag">PowerBI</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Excel</span>
+            <span class="tech-tag">Data Analytics</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-database"></i>
+                <span>10K+ Records</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 7 - Ecommerce Store -->
+<!--<div class="project-card" data-category="web">
+    <div class="project-image-wrapper">
+        <img src="project7.jpg" alt="Ecommerce Store" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Ecommerce Store</h3>
+        <p class="project-description">A fully functional online store with product catalog, shopping cart, and secure payment gateway integration, designed for seamless user experience.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Payment Gateway</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span>100+ Products</span>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!-- Project 8 - Interior Design Showcase -->
+<div class="project-card" data-category="web">
+    <div class="project-image-wrapper">
+        <img src="project8.jpg" alt="Interior Design Showcase" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Interior Design Portfolio</h3>
+        <p class="project-description">A visually stunning static website showcasing interior design projects, featuring gallery, client testimonials, and service information.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive Design</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-paint-brush"></i>
+                <span>50+ Projects</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 9 - Trading Plans Website -->
+<!--<div class="project-card" data-category="web">
+    <div class="project-image-wrapper">
+        <img src="project9.jpg" alt="Trading Plans Website" class="project-image">
+        <div class="project-overlay">
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Trading Business Platform</h3>
+        <p class="project-description">A professional website showcasing trading services and plans, featuring contact forms, service details, and business growth strategies.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Contact Forms</span>
+        </div>
+        <div class="project-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <span>2023</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-chart-line"></i>
+                <span>30% Growth</span>
+            </div>
+        </div>
+    </div>-->
+               </div>
+            </div>
+        </div>
+
+        <div class="projects-cta">
+            <a href="https://github.com/yourusername" target="_blank" class="cta-button primary">
+                <i class="fab fa-github"></i>
+                <span>View More Projects</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+                 <br>
+<center><h2 class="section-title">Get In Touch</h2></center>
+                   <br>
+        <div class="contact-container">
+            
+            <!--<form class="contact-form">
+                <div class="form-group">
+                    <input type="text" class="form-input" id="name" placeholder=" " required>
+                    <label for="name" class="form-label">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" id="email" placeholder=" " required>
+                    <label for="email" class="form-label">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-input" id="message" placeholder=" " required></textarea>
+                    <label for="message" class="form-label">Your Message</label>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>-->
+            <!--php test-->
+            <form class="contact-form" action="contact_submit.php" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
+                    <label for="name" class="form-label">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" id="email" name="email" placeholder=" " required>
+                    <label for="email" class="form-label">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-input" id="message" name="message" placeholder=" " required></textarea>
+                    <label for="message" class="form-label">Your Message</label>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+
+            
+            <!--php test end-->
+         
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>rohitgunthal44@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 8408088454</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Latur, Maharastra</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="#" class="footer-logo">Rohit Gunthal</a>
+            
+            <nav class="footer-nav">
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </nav>
+            
+            <div class="footer-social">
+                <a href="https://github.com/rohitgunthal18" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rohit-gunthal-8951a3244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/xrohia?igsh=MWpyZGdtNzk3dGl4Yg%3D%3D&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <p class="footer-text">&copy; 2025 Rohit-Gunthal©. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
