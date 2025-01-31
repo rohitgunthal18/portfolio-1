@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow all web crawlers to access all content
+Disallow:
+
+# Sitemap location
+Sitemap: https://rohitgunthal18.github.io/sitemap.xml
+
+# Optional: Specify crawl delay (in seconds) if needed
+# Crawl-delay: 10
+
+# Block specific files/directories if needed
+# Disallow: /private/
+# Disallow: /temp/
+# Disallow: /assets/downloads/
+
+# Block specific bots if needed (example)
+# User-agent: BadBot
+# Disallow: /
