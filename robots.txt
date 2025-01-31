@@ -5,7 +5,7 @@ Allow: /
 Disallow:
 
 # Sitemap location
-Sitemap: https://rohitgunthal18.github.io/sitemap.xml
+Sitemap: https://rohitgunthal18.github.io/portfolio-1/sitemap.xml
 
 # Optional: Specify crawl delay (in seconds) if needed
 # Crawl-delay: 10
