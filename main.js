@@ -3,6 +3,51 @@
 // Dark Theme with Orange Accents
 // ====================================
 
+/* ============ EMAILJS THANK YOU EMAIL ============ */
+const sendThankYouEmail = async (name, email, formType) => {
+    try {
+        // Check if EmailJS is loaded
+        if (typeof emailjs === 'undefined') {
+            console.error('EmailJS not loaded');
+            return;
+        }
+
+        console.log('EmailJS object:', emailjs);
+        console.log('EmailJS methods:', Object.keys(emailjs));
+
+        // EmailJS configuration
+        const serviceId = 'service_2iizwfc';
+        const templateId = 'template_z547owk';
+        
+        // Prepare template parameters
+        const templateParams = {
+            user_name: name,
+            email: email,
+            form_type: formType,
+            reply_to: 'xrohia@gmail.com'
+        };
+
+        console.log('Sending thank you email via EmailJS:', { name, email, formType });
+        console.log('Template params:', templateParams);
+
+        // Send email using EmailJS v4 client-side method
+        const response = await emailjs.send(serviceId, templateId, templateParams);
+        
+        console.log('EmailJS response:', response);
+        return response;
+        
+    } catch (error) {
+        console.error('EmailJS error:', error);
+        console.error('Error details:', {
+            message: error.message,
+            status: error.status,
+            text: error.text
+        });
+        // Don't throw error, just log it
+        console.log('Email sending failed, but form submission was successful');
+    }
+};
+
 /* ============ MOBILE NAVIGATION ============ */
 const initMobileNav = () => {
     const mobileToggle = document.getElementById('mobileToggle');
@@ -507,6 +552,17 @@ const initContactForm = () => {
                 if (error) throw error;
                 console.log('Contact submission saved:', result);
             }
+
+            // Send thank you email via EmailJS (with delay to ensure EmailJS is loaded)
+            setTimeout(async () => {
+                try {
+                    await sendThankYouEmail(data.name, data.email, formType);
+                    console.log('Thank you email sent successfully');
+                } catch (emailError) {
+                    console.error('Failed to send thank you email:', emailError);
+                    // Don't fail the form submission if email fails
+                }
+            }, 1000);
 
             // Success state
             btnText.textContent = 'Sent Successfully!';
