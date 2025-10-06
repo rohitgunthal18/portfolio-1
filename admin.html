@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Rohit Gunthal Portfolio</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo-animated">
+                    <span class="logo-letter logo-r">R</span>
+                    <span class="logo-letter logo-g">G</span>
+                </div>
+                <h1>Admin Dashboard</h1>
+                <p>Login to manage your portfolio</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i>
+                        Username
+                    </label>
+                    <input type="text" id="username" name="username" placeholder="Enter username" required autocomplete="username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        Password
+                    </label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" placeholder="Enter password" required autocomplete="current-password">
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-login">
+                    <span class="btn-text">Login</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                
+                <div id="loginError" class="error-message" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard" style="display: none;">
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-animated-small">
+                    <span class="logo-letter logo-r">R</span>
+                    <span class="logo-letter logo-g">G</span>
+                </div>
+                <h2>Admin Panel</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="overview">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="nav-item" data-page="contacts">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact Messages</span>
+                    <span class="badge" id="contactsBadge">0</span>
+                </a>
+                <a href="#" class="nav-item" data-page="projects">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Project Requests</span>
+                    <span class="badge" id="projectsBadge">0</span>
+                </a>
+                <a href="#" class="nav-item" data-page="manage-projects">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Manage Projects</span>
+                    <span class="badge" id="dynamicProjectsBadge">0</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="btn-logout" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-left">
+                    <h1 id="pageTitle">Dashboard Overview</h1>
+                    <p id="pageSubtitle">Welcome back, <span id="adminName">Rohit</span>!</p>
+                </div>
+                <div class="header-right">
+                    <div class="admin-info">
+                        <div class="admin-avatar">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="admin-details">
+                            <span class="admin-username user-email" id="headerUsername">xrohia</span>
+                            <span class="admin-role">Super Admin</span>
+                        </div>
+                    </div>
+                    <button id="logoutBtn" class="btn-logout" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Overview Page -->
+            <div id="overviewPage" class="page-content active-page">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalContacts">0</h3>
+                            <p>Total Contacts</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon project-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalProjects">0</h3>
+                            <p>Project Requests</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon unread-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="unreadCount">0</h3>
+                            <p>Unread Messages</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon pending-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="pendingCount">0</h3>
+                            <p>Pending Projects</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-section">
+                    <h2>Recent Activity</h2>
+                    <div id="recentActivity" class="activity-list"></div>
+                </div>
+            </div>
+
+            <!-- Contacts Page -->
+            <div id="contactsPage" class="page-content">
+                <div class="page-actions">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="contactSearch" placeholder="Search contacts...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-status="all">All</button>
+                        <button class="filter-btn" data-status="unread">Unread</button>
+                        <button class="filter-btn" data-status="read">Read</button>
+                    </div>
+                </div>
+                
+                <div id="contactsList" class="messages-list"></div>
+            </div>
+
+            <!-- Projects Page -->
+            <div id="projectsPage" class="page-content">
+                <div class="page-actions">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="projectSearch" placeholder="Search projects...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-status="all">All</button>
+                        <button class="filter-btn" data-status="pending">Pending</button>
+                        <button class="filter-btn" data-status="reviewing">Reviewing</button>
+                        <button class="filter-btn" data-status="approved">Approved</button>
+                    </div>
+                </div>
+                
+                <div id="projectsList" class="messages-list"></div>
+            </div>
+
+            <!-- Manage Projects Page -->
+            <div id="manage-projectsPage" class="page-content">
+                <div class="page-actions">
+                    <button class="btn-add-project" id="btnAddProject">
+                        <i class="fas fa-plus"></i>
+                        Add New Project
+                    </button>
+                </div>
+
+                <!-- Add/Edit Project Form -->
+                <div id="projectFormContainer" class="form-container" style="display: none;">
+                    <div class="form-header">
+                        <h3 id="formTitle">Add New Project</h3>
+                        <button class="btn-close-form" id="btnCloseForm">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <form id="projectForm" class="project-form">
+                        <input type="hidden" id="projectId" value="">
+                        
+                        <div class="form-grid">
+                            <!-- Project Title -->
+                            <div class="form-group full-width">
+                                <label for="projectTitle">
+                                    <i class="fas fa-heading"></i>
+                                    Project Title *
+                                </label>
+                                <input type="text" id="projectTitle" placeholder="Enter project name" required maxlength="100">
+                            </div>
+
+                            <!-- Project Description -->
+                            <div class="form-group full-width">
+                                <label for="projectDescription">
+                                    <i class="fas fa-align-left"></i>
+                                    Description *
+                                </label>
+                                <textarea id="projectDescription" rows="3" placeholder="Brief description of the project" required maxlength="200"></textarea>
+                                <small class="char-count"><span id="descCharCount">0</span>/200</small>
+                            </div>
+
+                            <!-- Category -->
+                            <div class="form-group">
+                                <label for="projectCategory">
+                                    <i class="fas fa-tag"></i>
+                                    Category *
+                                </label>
+                                <div class="category-input-group">
+                                    <select id="projectCategory" required>
+                                        <option value="">Select Category</option>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Data Analytics">Data Analytics</option>
+                                        <option value="Mobile Apps">Mobile Apps</option>
+                                        <option value="Utility Tools">Utility Tools</option>
+                                        <option value="custom">+ Create Custom Category</option>
+                                    </select>
+                                    <input type="text" id="customCategory" placeholder="Enter custom category" style="display: none;" maxlength="50">
+                                </div>
+                            </div>
+
+                            <!-- Image Upload -->
+                            <div class="form-group">
+                                <label for="projectImage">
+                                    <i class="fas fa-image"></i>
+                                    Project Image *
+                                </label>
+                                <div class="image-upload-area" id="imageUploadArea">
+                                    <input type="file" id="projectImage" accept="image/jpeg,image/png,image/gif,image/webp" style="display: none;">
+                                    <div class="upload-placeholder" id="uploadPlaceholder">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Click to upload or drag & drop</p>
+                                        <small>JPEG, PNG, GIF, WebP (Max 5MB)</small>
+                                    </div>
+                                    <div class="image-preview" id="imagePreview" style="display: none;">
+                                        <img id="previewImg" src="" alt="Preview">
+                                        <button type="button" class="btn-remove-image" id="btnRemoveImage">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="existingImageUrl" value="">
+                            </div>
+
+                            <!-- GitHub URL -->
+                            <div class="form-group">
+                                <label for="githubUrl">
+                                    <i class="fab fa-github"></i>
+                                    GitHub URL (Optional)
+                                </label>
+                                <input type="url" id="githubUrl" placeholder="https://github.com/username/repo">
+                            </div>
+
+                            <!-- Demo URL -->
+                            <div class="form-group">
+                                <label for="demoUrl">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Live Demo URL (Optional)
+                                </label>
+                                <input type="url" id="demoUrl" placeholder="https://demo.example.com">
+                            </div>
+
+                            <!-- Tech Tags -->
+                            <div class="form-group full-width">
+                                <label for="techTags">
+                                    <i class="fas fa-code"></i>
+                                    Technology Tags * (2-6 tags)
+                                </label>
+                                <div class="tags-input-container">
+                                    <div class="tags-display" id="tagsDisplay"></div>
+                                    <input type="text" id="techTagInput" placeholder="Type tag and press Enter" maxlength="20">
+                                </div>
+                                <small class="tags-hint">Press Enter to add tag. Min 2, Max 6 tags.</small>
+                                <input type="hidden" id="techTagsHidden" value="">
+                            </div>
+
+                            <!-- Active Status -->
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="projectActive" checked>
+                                    <span class="checkmark"></span>
+                                    <span>Active (Show on portfolio)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel" id="btnCancelForm">Cancel</button>
+                            <button type="submit" class="btn-save">
+                                <i class="fas fa-save"></i>
+                                <span id="btnSaveText">Save Project</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Projects List -->
+                <div id="dynamicProjectsList" class="projects-table-container">
+                    <table class="projects-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Tags</th>
+                                <th>Status</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="projectsTableBody">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                    <div id="noProjects" class="no-data" style="display: none;">
+                        <i class="fas fa-folder-open"></i>
+                        <p>No projects added yet</p>
+                        <small>Click "Add New Project" to create your first project card</small>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Message Detail Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Message Details</h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Supabase JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Supabase Configuration -->
+    <script src="supabase-config.js"></script>
+    
+    <!-- Admin Authentication -->
+    <script src="admin-auth.js"></script>
+    
+    <!-- Admin Dashboard Script -->
+    <script src="admin.js"></script>
+    
+    <!-- Manage Projects Script -->
+    <script src="admin-projects-manager.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Gunthal - Portfolio Website</title>
+    <meta name="description" content="Explore the portfolio of Rohit Gunthal, a Web Developer and Data Analyst. Download free portfolio website templates and see top projects.">
+    <meta name="keywords" content="Rohit Gunthal, Portfolio website template, Portfolio website download, Web Developer, Data Analyst">
+    <meta name="author" content="Rohit Gunthal">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Rohit Gunthal - Portfolio Website">
+    <meta property="og:description" content="Explore my portfolio as a Web Developer and Data Analyst. See my projects and download portfolio website templates.">
+    <meta property="og:url" content="https://rohitgunthal.is-a.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://rohitgunthal.is-a.dev/assets/portfolio-preview.jpg">
+    <!-- Additional SEO Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rohit Gunthal - Portfolio Website">
+    <meta name="twitter:description" content="Explore my portfolio as a Web Developer and Data Analyst. See my projects and download portfolio website templates.">
+    <meta name="twitter:image" content="https://rohitgunthal.is-a.dev/assets/portfolio-preview.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <!-- Optionally, if you have a PNG version for Apple devices, add: -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/logo-180.png"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/profile.jpeg">
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="img/profile.jpeg" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Existing Stylesheets and Scripts -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rohit Gunthal",
+      "url": "https://rohitgunthal.is-a.dev",
+      "jobTitle": "Web Developer & Data Analyst",
+      "description": "A passionate web developer and data analyst specializing in creating beautiful and functional web experiences",
+      "image": "https://rohitgunthal.is-a.dev/assets/profile1.jpg",
+      "worksFor": { "@type": "Organization", "name": "Freelance" },
+      "sameAs": [
+        "https://github.com/rohitgunthal18",
+        "https://linkedin.com/in/rohitgunthal"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Your University Name"
+      }
+    }
+    </script>
+    <!-- Additional Schema Markup for Portfolio Projects -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "CreativeWork",
+          "position": 1,
+          "name": "E-Commerce Platform",
+          "description": "A full-stack e-commerce platform with real-time inventory management",
+          "url": "https://rohitgunthal.is-a.dev/projects/ecommerce"
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 2,
+          "name": "Fitness Tracking App",
+          "description": "A mobile app for tracking workouts and nutrition",
+          "url": "https://rohitgunthal.is-a.dev/projects/fitness"
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 3,
+          "name": "Dashboard Design System",
+          "description": "A comprehensive design system for enterprise applications",
+          "url": "https://rohitgunthal.is-a.dev/projects/dashboard"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="neon-text">Portfolio</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animated-headline">Hi, I'm <span class="highlight-word">Rohit</span> <span class="highlight-word">Gunthal</span>.</h1>
+                <p class="subheadline">Web Developer & Data Analyst crafting immersive digital experiences.</p>
+                <div class="cta-container">
+                    <a href="#projects" class="cta-button"><span class="btn-text">View</span> Projects</a>
+                    <a href="#contact" class="cta-button cta-alt"><span class="btn-text">Let's</span> Connect</a>
+                </div>
+            </div>
+            
+            <div class="hero-shapes">
+                <div class="hero-shape shape-1"></div>
+                <div class="hero-shape shape-2"></div>
+                <div class="hero-shape shape-3"></div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="particles-container"></div>
+            </div>
+            
+            <div class="achievement-badges">
+                <div class="badge">
+                    <i class="fas fa-code-branch badge-icon"></i>
+                    <span class="badge-text">11+ Projects</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-users badge-icon"></i>
+                    <span class="badge-text">5+ Clients</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-briefcase badge-icon"></i>
+                    <span class="badge-text">1+ Yr Experience</span>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll Down</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-card">
+                <div class="about-image">
+                    <img src="img/profile.jpeg" alt="Profile Photo">
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">About <span class="neon-text">Me</span></h2>
+                    <p class="about-tagline">"Data Analyst | Web Developer"</p>
+                    <p class="about-description">Hi, I'm Rohit Gunthal, a computer science student who loves building full-stack software and exploring the power of AI. With skills in Python, SQL, and web development, I enjoy creating projects that solve real-world problems and make life easier.</p>
+                    <div class="about-links">
+                        <a href="https://drive.google.com/file/d/1zXepuwJ-JBSjIpnPuDQux-3Pr28FBKr3/view?usp=drive_link" class="social-link" target="_blank"><i class="fas fa-file-alt"></i> Resume</a>
+                        <a href="https://github.com/rohitgunthal18" class="social-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/rohit-gunthal-8951a3244" class="social-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://www.instagram.com/xrohia" class="social-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical <span class="neon-text">Arsenal</span></h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="frontend">Frontend</button>
+                <button class="tab-btn" data-tab="backend">Backend</button>
+                <button class="tab-btn" data-tab="data">Data</button>
+                <button class="tab-btn" data-tab="tools">Tools</button>
+            </div>
+            <div class="skills-grid tab-content active" id="frontend">
+                <div class="skill-card" data-skill="HTML5" data-level="95">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <div class="skill-info">
+                        <h3>HTML5</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="CSS3" data-level="90">
+                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                    <div class="skill-info">
+                        <h3>CSS3</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="JavaScript" data-level="88">
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <div class="skill-info">
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="React" data-level="85">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <div class="skill-info">
+                        <h3>React.js</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="Bootstrap" data-level="92">
+                    <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+                    <div class="skill-info">
+                        <h3>Bootstrap</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="TailwindCSS" data-level="88">
+                    <div class="skill-icon"><i class="fab fa-css3"></i></div>
+                    <div class="skill-info">
+                        <h3>TailwindCSS</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+            </div>
+            <div class="skills-grid tab-content" id="backend">
+                <div class="skill-card" data-skill="Python" data-level="90">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <div class="skill-info">
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="Node.js" data-level="85">
+                    <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                    <div class="skill-info">
+                        <h3>Node.js</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="PHP" data-level="82">
+                    <div class="skill-icon"><i class="fab fa-php"></i></div>
+                    <div class="skill-info">
+                        <h3>PHP</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="MySQL" data-level="88">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <div class="skill-info">
+                        <h3>MySQL</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="Flask" data-level="80">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <div class="skill-info">
+                        <h3>Flask</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="REST APIs" data-level="85">
+                    <div class="skill-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <div class="skill-info">
+                        <h3>REST APIs</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+            </div>
+            <div class="skills-grid tab-content" id="data">
+                <div class="skill-card" data-skill="Power BI" data-level="90">
+                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="skill-info">
+                        <h3>Power BI</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="Excel" data-level="92">
+                    <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
+                    <div class="skill-info">
+                        <h3>Excel</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="SQL" data-level="88">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <div class="skill-info">
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="Pandas" data-level="85">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <div class="skill-info">
+                        <h3>Pandas</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="Data Visualization" data-level="88">
+                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="skill-info">
+                        <h3>Data Visualization</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="Data Analysis" data-level="90">
+                    <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="skill-info">
+                        <h3>Data Analysis</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+            </div>
+            <div class="skills-grid tab-content" id="tools">
+                <div class="skill-card" data-skill="Git" data-level="90">
+                    <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                    <div class="skill-info">
+                        <h3>Git</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="GitHub" data-level="92">
+                    <div class="skill-icon"><i class="fab fa-github"></i></div>
+                    <div class="skill-info">
+                        <h3>GitHub</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="XAMPP" data-level="85">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <div class="skill-info">
+                        <h3>XAMPP</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+                <div class="skill-card" data-skill="Cursor AI" data-level="88">
+                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                    <div class="skill-info">
+                        <h3>Cursor AI</h3>
+                    </div>
+                    <div class="skill-bar"><div class="skill-level"></div></div>
+                </div>
+            </div>
+            
+            <div class="soft-skills-container">
+                <h3 class="soft-skills-title">Soft <span class="neon-text">Skills</span></h3>
+                <div class="soft-skills-grid">
+                    <div class="soft-skill-tag">Problem-Solving</div>
+                    <div class="soft-skill-tag">Self-Learning</div>
+                    <div class="soft-skill-tag">Critical Thinking</div>
+                    <div class="soft-skill-tag">Communication</div>
+                    <div class="soft-skill-tag">Team Work</div>
+                    <div class="soft-skill-tag">Curiosity</div>
+                    <div class="soft-skill-tag">Creativity</div>
+                    <div class="soft-skill-tag">Adaptability</div>
+                </div>
+            </div>
+            
+            <div class="education-container">
+                <h3 class="education-title">Education & <span class="neon-text">Certifications</span></h3>
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <div class="education-year">2025</div>
+                        <div class="education-content">
+                            <h4>Bachelor of Science in Computer Science</h4>
+                            <p>College of Computer Science and Information Technology, Latur</p>
+                            <div class="education-score">8.35 CGPA</div>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2020</div>
+                        <div class="education-content">
+                            <h4>High School (HSC)</h4>
+                            <p>Shree Saraswati Mahavidyalay, Latur</p>
+                            <div class="education-score">64%</div>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2018</div>
+                        <div class="education-content">
+                            <h4>Secondary School (SSC)</h4>
+                            <p>Shree Saraswati Mahavidyalay, Latur</p>
+                            <div class="education-score">91%</div>
+                        </div>
+                    </div>
+                    <div class="education-item cert">
+                        <div class="education-year"><i class="fas fa-certificate"></i></div>
+                        <div class="education-content">
+                            <h4>Data Analytics Certification</h4>
+                            <p>Coursera</p>
+                        </div>
+                    </div>
+                    <div class="education-item cert">
+                        <div class="education-year"><i class="fas fa-certificate"></i></div>
+                        <div class="education-content">
+                            <h4>Communication Certificate</h4>
+                            <p>TCS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">My Digital <span class="neon-text">Experiments</span></h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-preview-loading">
+                            <div class="loading-spinner"></div>
+                        </div>
+                        <iframe class="project-iframe" title="Amazon Sales Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiNTAwZGM1NWQtMTlkMS00MDRiLWE2OGEtMWU0MzhkYTVmMzA0IiwidCI6ImUwZDJiOGQwLWQ5N2QtNGI4MC1hYTFkLTg5NzE3ZWM0NjViNyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>Amazon Sales Dashboard</h3>
+                            <p>Interactive Power BI dashboard analyzing Amazon sales data with key performance metrics.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Power BI</span>
+                                <span class="tech-badge">Data Analysis</span>
+                                <span class="tech-badge">Excel</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>10K+ Records</span>
+                                <span>Data Visualization</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay-footer">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiNTAwZGM1NWQtMTlkMS00MDRiLWE2OGEtMWU0MzhkYTVmMzA0IiwidCI6ImUwZDJiOGQwLWQ5N2QtNGI4MC1hYTFkLTg5NzE3ZWM0NjViNyJ9" class="view-project" target="_blank">View Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-preview-loading">
+                            <div class="loading-spinner"></div>
+                        </div>
+                        <iframe class="project-iframe" title="Pathology Lab Appointment System" src="https://gklab.unaux.com/?i=1" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>Pathology Lab Appointment System</h3>
+                            <p>Web-based appointment booking system for pathology labs with backend management.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>1000+ Bookings</span>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay-footer">
+                            <a href="https://gklab.unaux.com/?i=1" class="view-project" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-preview-loading">
+                            <div class="loading-spinner"></div>
+                        </div>
+                        <iframe class="project-iframe" title="College Notes Repository" src="https://rohitgunthal18.github.io/cspak/index.html" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>College Notes Repository</h3>
+                            <p>Centralized platform for college students to access and share study materials.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>200+ Notes</span>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay-footer">
+                            <a href="https://rohitgunthal18.github.io/cspak/index.html" class="view-project" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-preview-loading">
+                            <div class="loading-spinner"></div>
+                        </div>
+                        <iframe class="project-iframe" title="URL to QR Generator" src="https://rohitgunthal18.github.io/URL-to-QR-/" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>URL to QR Generator</h3>
+                            <p>Simple tool that converts any URL into a QR code instantly with clean interface.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">QR Code API</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>300+ Users</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay-footer">
+                            <a href="https://rohitgunthal18.github.io/URL-to-QR-/" class="view-project" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-preview-loading">
+                            <div class="loading-spinner"></div>
+                        </div>
+                        <iframe class="project-iframe" title="URL Shortener" src="https://rohitgunthal18.github.io/URL-Shortener/" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>URL Shortener</h3>
+                            <p>Fast and efficient tool that shortens long URLs into tiny links using TinyURL API.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">TinyURL API</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>250+ Users</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay-footer">
+                            <a href="https://rohitgunthal18.github.io/URL-Shortener/" class="view-project" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-preview-loading">
+                            <div class="loading-spinner"></div>
+                        </div>
+                        <iframe class="project-iframe" title="Blood Donation Portal" src="http://donateblood.ct.ws/" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>Blood Donation Portal</h3>
+                            <p>Platform connecting blood donors with recipients featuring admin panel and database.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                            </div>
+                            <div class="project-metrics">
+                                <span>600+ Users</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay-footer">
+                            <a href="http://donateblood.ct.ws/" class="view-project" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-cta">
+                <a href="https://github.com/rohitgunthal18?tab=repositories" target="_blank" class="cta-button primary">
+                    <i class="fab fa-github"></i>
+                    <span>View More Projects</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Let's <span class="neon-text">Connect</span></h2>
+            <div class="contact-container">
+                <form class="contact-form" action="contact_submit.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Shoot Me a Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>rohitgunthal44@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8408088454</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Latur, Maharashtra</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/rohitgunthal18" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rohit-gunthal-8951a3244" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/xrohia" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rohit Gunthal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/679cf6b3825083258e0e8bff/1iiui7c94';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html> 

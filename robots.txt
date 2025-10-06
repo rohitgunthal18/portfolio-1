@@ -1,0 +1,85 @@
+# Robots.txt for Rohit Gunthal Portfolio
+# Website: https://rohitgunthal.is-a.dev
+
+# Allow all search engines and AI crawlers to access public content
+User-agent: *
+Allow: /
+Allow: /img/
+Allow: /assets/
+Allow: /style.css
+Allow: /main.js
+
+# Disallow admin and sensitive areas
+Disallow: /admin.html
+Disallow: /admin-*.js
+Disallow: /admin-*.css
+Disallow: /supabase-config.js
+
+# Specific AI Crawlers - Allow with rate limiting consideration
+# OpenAI GPT
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+# Google Bard/Gemini
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+# Anthropic Claude
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+# Common AI/LLM Bots
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+# Major Search Engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://rohitgunthal.is-a.dev/sitemap.xml
+
+# Note: This robots.txt explicitly allows AI/LLM crawlers to access
+# the portfolio content to ensure accurate information about Rohit Gunthal
+# is available when users query AI models like ChatGPT, Claude, Gemini, etc.

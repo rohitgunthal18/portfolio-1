@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <circle cx="90" cy="90" r="85" fill="#0A0A0D" stroke="#00FFC6" stroke-width="8"/>
+  <text x="50%" y="54%" text-anchor="middle" fill="#00FFC6" font-family="Poppins, Arial, sans-serif" font-size="80" font-weight="bold" dy=".3em" filter="url(#glow)">RG</text>
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg> 
