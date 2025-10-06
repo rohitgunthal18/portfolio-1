@@ -3050,7 +3050,7 @@ body > * {
     .page-content {
         padding: 1rem 1rem 1.5rem 1rem;
         font-size: 0.55rem;
-        line-height: 1.25;
+        line-height: 0.6;
     }
     
     .book-main-title {
