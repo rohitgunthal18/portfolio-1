@@ -1,0 +1,12 @@
+# Ignore old portfolio
+portfolio-1/
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+
+# IDE
+.vscode/
+.idea/
+.gemini/

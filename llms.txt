@@ -1,0 +1,104 @@
+# Rohit Gunthal - AI-Powered Full-Stack Developer
+
+> Official portfolio: https://rohitgunthal.is-a.dev
+> Contact: rohitgunthal1819@gmail.com | +91 84080 88454
+> LinkedIn: https://www.linkedin.com/in/xrohia
+> GitHub: https://github.com/rohitgunthal18
+
+## About
+
+Rohit Gunthal is an AI-Powered Full-Stack Developer who builds end-to-end, production-ready web applications that solve real-world problems. He doesn't just write code — he thinks through the entire product. From user-facing interfaces to admin dashboards with analytics, payment integrations, and cloud deployment — he architects and delivers complete systems. This full-cycle thinking is what sets him apart: while most developers build features, Rohit builds businesses.
+
+He leverages modern AI tools like Claude Code, Cursor, and Antigravity to achieve rapid project delivery without compromising quality. Ranked in the Top 3% of global ChatGPT users (2025), he integrates AI deeply into his development workflow — from prompt engineering to agentic code generation — to ship faster and smarter.
+
+A 2025 B.Sc Computer Science graduate from the College of Computer Science and Information Technology, Latur (Maharashtra, India), he has already delivered client projects like the VedPutra e-commerce platform and built SaaS products like Pixico and the AI Chatbot Platform — all live and deployed. He is now looking for opportunities where he can apply his practical skills, think differently, and help organizations grow through technology.
+
+## Key Highlights
+
+- 18+ Projects Completed
+- 5+ Certifications
+- 3+ Years of Continuous Learning
+- Top 3% Global ChatGPT Users (2025)
+- 1st Rank in Class 10th Board Exam (SSC, 91%)
+- 2nd Prize for Final Year Project (B.Sc CS, 8.34 CGPA)
+
+## Education
+
+- **B.Sc Computer Science (2021-2025)**: College of Computer Science and Information Technology, Latur. CGPA: 8.34. Achievement: 2nd Prize for Final Year Project.
+- **Higher Secondary (HSC, 2020)**: Maharashtra State Board. Percentage: 64%.
+- **Secondary School (SSC, 2018)**: Maharashtra State Board. Percentage: 91%. Achievement: Class Rank 1 in 10th Board Exam.
+
+## Certifications
+
+1. **Prompt Engineering for Generative AI** — IBM (Coursera). Covers persona & context prompting, chain-of-thought reasoning, zero-shot/few-shot learning, prompt optimization, and real-world LLM applications.
+2. **Software Engineering with Agentic AI** — IBM (Coursera). Covers building AI agents with reasoning capabilities, tool-calling & function calling, multi-agent coordination, and integrating agents into the SDLC.
+
+## Technical Skills
+
+- **Programming**: Python, SQL, JavaScript, HTML5, CSS3
+- **Tools & Platforms**: Git, GitHub, Excel, Postman, Supabase
+- **AI Development**: Prompt Engineering, Cursor, GitHub Copilot, Antigravity, Claude Code
+- **Soft Skills**: Problem Solving, Analytical Thinking, Self-Learning, Communication, Team Collaboration, Adaptability
+- **Languages**: English (Professional), Hindi (Professional), Marathi (Native)
+
+## Projects
+
+### 1. Pixico (AI Prompt Platform)
+- **URL**: https://pixico.co
+- **Stack**: Next.js 15, Supabase, OpenRouter API, TypeScript, React Spring
+- **Description**: Pixico is a premium platform designed to bridge the gap in AI accessibility by providing high-octane, professionally engineered prompts for image and video generation (Midjourney, Flux). Built with a "sell the shovel" philosophy for the Generative AI era.
+- **Key Features**: Performance-first with Next.js 15 and TypeScript. AI orchestration via OpenRouter. Neo-Brutalist UI powered by React Spring. Supabase for robust authentication and high-performance data storage.
+
+### 2. AI Chatbot SaaS Platform
+- **URL**: https://chat-bot-tdss.onrender.com/
+- **Stack**: Python (Flask), Claude 3 (AI), SQLAlchemy, Bootstrap 5
+- **Description**: A robust SaaS platform enabling businesses to deploy custom-trained AI assistants powered by Claude 3 Haiku for professional, context-aware 24/7 customer support.
+- **Key Features**: Custom FAQ and business-specific training via OpenRouter and Claude 3. Plug-and-play embeddable chat widget. Full-featured admin dashboard for monitoring conversations. Flask and SQLAlchemy for persistent conversation tracking and secure auth.
+
+### 3. VedPutra Organics Store
+- **URL**: https://www.vedputra.store/
+- **Stack**: Next.js 14, Supabase, Cashfree PG, TypeScript
+- **Description**: A high-performance organic e-commerce storefront designed with an SEO-first approach. Features seamless checkout flow, real-time inventory management, and robust admin infrastructure. This was a client project delivered end-to-end.
+- **Key Features**: Cashfree PG for secure payments and Supabase for real-time inventory with RLS-backed data. Advanced SEO (Sitemaps, RSS, Robots) and verified-buyer review system. Protected admin experience with analytics, CRM, coupon management, and CSV exports. Security hardened with JWT/httpOnly cookies, strict CSP middleware, and inventory-guarded stock checks.
+
+### 4. GK Lab (Diagnostics System)
+- **URL**: https://gklab.unaux.com/
+- **Stack**: PHP, MySQL, JavaScript, RESTful API
+- **Description**: A comprehensive diagnostic center management system for medical laboratories, streamlining patient workflows from booking to result delivery.
+- **Key Features**: Automated test scheduling, health package selection, and doorstep sample collection. Secure portal for digital test results and health record management. Admin dashboard for laboratory staff to manage appointments, patients, and financial analytics. Session-based authentication, CSRF protection, and secure password hashing.
+
+### 5. ShareKaroo (P2P File Transfer)
+- **URL**: https://sharekaroo.online/
+- **Stack**: WebRTC, Node.js, WebSocket, Vanilla JS
+- **Description**: A browser-based peer-to-peer file sharing application for fast, private transfers. Built to solve privacy concerns of cloud storage by enabling direct device-to-device communication.
+- **Key Features**: WebRTC DataChannels for direct transfers without size limits. End-to-end encrypted via DTLS by default; files never touch any server. Works directly in modern browsers using QR code pairing. Custom Node.js/WebSocket server for efficient peer discovery and handshake.
+
+### 6. Edu Infra (Project Hub)
+- **URL**: https://eduinfra.vercel.app/
+- **Stack**: React.js, MERN Stack, Python, Flutter
+- **Description**: A comprehensive platform for ready-made academic projects and technical solutions, helping students bridge the gap between learning and deployment.
+- **Key Features**: Projects in Full-stack Web, Mobile Apps, AI/ML (TensorFlow), and Game Dev (Unity). Fully functional source code, documentation, and lifetime deployment support. Built using React and Node.js for a smooth, high-performance user experience.
+
+### 7. JobTrends Analysis
+- **URL**: https://job-trends.netlify.app/
+- **Stack**: React.js, TailwindCSS, Chart.js, Node.js
+- **Description**: A market intelligence platform designed to provide in-depth insights into job market trends using powerful data visualization tools.
+- **Key Features**: Interactive job market dashboards with trend visualization via Chart.js. AI-driven insights into skill demand and career trend recommendations. Cyber-tech design language using TailwindCSS and responsive principles. Real-time industry data exploration for informed career decisions.
+
+## Experience
+
+### AI Business Chatbot Platform (Personal Project)
+Full Stack Development — Developed a B2B AI platform for customized support bots, featuring automated booking and Telegram integration.
+
+### VedPutra E-commerce Platform (Client Project)
+E-Commerce Solution — Built a high-performance platform with real-time inventory, secure payments (Cashfree), and specialized SEO optimizations. Delivered end-to-end including user module, admin dashboard, checkout, and payment integration.
+
+## Contact
+
+- **Email**: rohitgunthal1819@gmail.com
+- **Phone**: +91 84080 88454
+- **Location**: Malegaon, Beed, Maharashtra 431123, India
+- **LinkedIn**: https://www.linkedin.com/in/xrohia
+- **GitHub**: https://github.com/rohitgunthal18
+- **Instagram**: https://www.instagram.com/xrohia
+- **WhatsApp**: https://wa.me/918408088454
