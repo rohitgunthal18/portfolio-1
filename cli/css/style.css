@@ -1,0 +1,411 @@
+/*
+ * Terminal Portfolio — authentic Linux CLI aesthetic.
+ *
+ * A real-terminal look: white as the primary text colour with green/blue/cyan
+ * accents for specific roles (prompt user, path, links), exactly like a modern
+ * shell (bash/zsh) on a dark background. No window chrome — no border, no panel,
+ * no hint bar, no suggestion controls. The prompt flows directly beneath the
+ * latest output and the whole surface scrolls as one, just like a real CLI.
+ *
+ * Colour roles (professional terminal palette):
+ *   white   — command output / typed text (primary)
+ *   green   — prompt user@host
+ *   blue    — current working-directory path in the prompt
+ *   cyan    — clickable links (Ctrl/Cmd + click to open)
+ *   red     — errors
+ *   grey    — boot log / secondary
+ *
+ * Plain CSS only — no preprocessor, no build step (Requirement 15).
+ */
+
+:root {
+  /* Professional terminal palette (white-primary with accents). */
+  --term-fg: #e6e6e6;            /* primary text: near-white */
+  --term-fg-dim: #9aa0a6;        /* secondary / boot log */
+  --term-green: #4ee44e;         /* prompt user@host */
+  --term-blue: #5ca8ff;          /* working-directory path */
+  --term-cyan: #45d9d9;          /* clickable links */
+  --term-amber: #ffcc66;         /* accents / warnings */
+  --term-red: #ff5f56;           /* errors */
+  --term-bg: #0c0c0c;            /* near-black terminal background */
+  --term-selection: rgba(92, 168, 255, 0.3);
+
+  --term-font: "JetBrains Mono", "Fira Code", "Cascadia Code", "SF Mono",
+    "Consolas", "DejaVu Sans Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* the terminal handles its own scrolling */
+}
+
+body {
+  background: var(--term-bg);
+  color: var(--term-fg);
+  font-family: var(--term-font);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--term-selection);
+}
+
+/* -------------------------------------------------------------------------
+ * Terminal surface — full screen, no chrome, scrolls as one block.
+ * ---------------------------------------------------------------------- */
+
+.terminal {
+  position: relative; /* anchor for the matrix overlay */
+  height: 100vh;
+  height: 100dvh; /* dynamic viewport height on mobile (avoids URL-bar jump) */
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.75rem 1rem 1.5rem;
+  background: var(--term-bg);
+  cursor: text; /* clicking anywhere focuses the input */
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+.terminal::-webkit-scrollbar {
+  width: 10px;
+}
+.terminal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 5px;
+}
+.terminal::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Output flows as plain wrapped lines; no inner scroll container. */
+.terminal-output {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Rendered output lines (primary = white). */
+.line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--term-fg);
+  margin: 0;
+}
+
+/* Echoed prompt + typed command. */
+.line.echo {
+  color: var(--term-fg);
+}
+
+/* Boot log lines read dimmer, like a real startup log. */
+.line.boot-line {
+  color: var(--term-fg-dim);
+}
+
+/* Welcome message. */
+.line.welcome {
+  color: var(--term-fg);
+}
+
+/* Errors. */
+.line.error {
+  color: var(--term-red);
+}
+
+/* Clickable links inside output (Ctrl/Cmd + click to open). */
+.term-link {
+  color: var(--term-cyan);
+  text-decoration: none;
+  cursor: pointer;
+}
+.term-link:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------
+ * GUI portfolio link — a subtle fixed escape hatch for non-terminal visitors.
+ * Sits in the top-right corner, styled like a quiet terminal accent so it
+ * never competes with the CLI itself.
+ * ---------------------------------------------------------------------- */
+
+.gui-link {
+  position: fixed;
+  top: 0.6rem;
+  right: 0.8rem;
+  z-index: 50;
+  font-family: var(--term-font);
+  font-size: 0.8rem;
+  color: var(--term-cyan);
+  background: rgba(12, 12, 12, 0.85);
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 0.3rem 0.65rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.gui-link:hover,
+.gui-link:focus-visible {
+  color: #0c0c0c;
+  background: var(--term-cyan);
+  border-color: var(--term-cyan);
+  outline: none;
+}
+
+/* ASCII "PORTFOLIO" banner — monospaced, accented, never widens the page. */
+.banner {
+  margin: 0 0 0.4rem;
+  font-family: var(--term-font);
+  color: var(--term-green);
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.05;
+  font-size: clamp(0.42rem, 2.2vw, 1rem);
+  max-width: 100%;
+}
+
+/* -------------------------------------------------------------------------
+ * Input line (prompt + text input + blinking cursor)
+ * Sits inline directly beneath the latest output — no separation.
+ * ---------------------------------------------------------------------- */
+
+.input-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+/* The colourized prompt is built from spans (see .prompt-* roles). */
+.prompt {
+  flex: 0 0 auto;
+  white-space: pre;
+  font-family: var(--term-font);
+  color: var(--term-green);
+  user-select: none;
+}
+
+.prompt-user {
+  color: var(--term-green);
+}
+.prompt-sep {
+  color: var(--term-fg-dim);
+}
+.prompt-path {
+  color: var(--term-blue);
+}
+.prompt-tip {
+  color: var(--term-fg);
+}
+
+.input-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  /* basis 0 so it consumes only the space left beside the prompt and never
+   * forces a wrap to the next line while space remains on the current line. */
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.terminal-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--term-fg);
+  font-family: var(--term-font);
+  font-size: inherit;
+  line-height: inherit;
+  caret-color: var(--term-fg);
+  /* textarea-as-input: wrap long commands onto new lines, auto-grow in height,
+   * and never show a resize handle or its own scrollbar. */
+  resize: none;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+  height: 1.45em;
+  display: block;
+}
+
+.terminal-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Custom block cursor — shown as a "ready" indicator when the input is not
+ * focused. While focused, the native caret marks the active position so this
+ * block is hidden to avoid a double cursor (13.4). */
+.cursor {
+  flex: 0 0 auto;
+  display: inline-block;
+  width: 0.6ch;
+  height: 1.05em;
+  margin-left: 0.05ch;
+  background: var(--term-fg);
+  animation: cursor-blink 1.05s steps(2, start) infinite;
+}
+
+.input-line:focus-within .cursor {
+  display: none;
+}
+
+@keyframes cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* A line being "typed out" shows a trailing block cursor while streaming, to
+ * give the real-terminal text-generation vibe. */
+.line.streaming::after {
+  content: "";
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.05em;
+  margin-left: 0.05ch;
+  vertical-align: text-bottom;
+  background: var(--term-fg);
+  animation: cursor-blink 1.05s steps(2, start) infinite;
+}
+
+/* -------------------------------------------------------------------------
+ * Utilities
+ * ---------------------------------------------------------------------- */
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------------------------
+ * Matrix easter-egg overlay
+ * ---------------------------------------------------------------------- */
+
+.matrix-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--term-bg);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.matrix-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor,
+  .line.streaming::after {
+    animation: none;
+  }
+}
+
+/* =========================================================================
+ * Responsive layout (Requirement 14: Mobile Responsiveness)
+ *
+ *   14.1 At mobile widths the terminal fits within the viewport with NO
+ *        horizontal page overflow.
+ *   14.2 The on-screen keyboard works on touch devices (real <input>, and a
+ *        >= 16px input font on mobile so iOS Safari does not auto-zoom).
+ *   14.4 Text stays legible across mobile / tablet / desktop.
+ * ====================================================================== */
+
+/* Tablet — tighten spacing, slightly smaller fluid text. */
+@media (max-width: 768px) {
+  body {
+    font-size: clamp(12.5px, 2.1vw, 14px);
+  }
+
+  .terminal {
+    padding: 0.6rem 0.75rem 1.25rem;
+  }
+
+  .gui-link {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.55rem;
+  }
+}
+
+/* Mobile — compact padding and smaller body text for a denser, real-terminal
+ * feel. The <input> itself stays at 16px so iOS Safari does not auto-zoom on
+ * focus (which would otherwise shift the layout and risk horizontal overflow);
+ * the visible glyph metrics still read smaller because line-height tightens. */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .terminal {
+    padding: 0.5rem 0.6rem 1.25rem;
+  }
+
+  /* The typed command text matches the terminal output text size on desktop.
+   * On iOS Safari, any focused field below 16px triggers an automatic zoom on
+   * tap (and iOS ignores user-scalable=no for this), so on mobile we pin the
+   * input to 16px to prevent that zoom. The font-size of typed text differs
+   * only slightly from the surrounding output as a result. */
+  .terminal-input {
+    font-size: 16px;
+  }
+
+  .prompt {
+    font-size: inherit;
+  }
+
+  /* The ASCII "PORTFOLIO" banner is slightly smaller on mobile and never shows
+   * its own horizontal scrollbar (it is decorative, so any residual overflow is
+   * simply clipped rather than producing a scroll bar). */
+  .banner {
+    font-size: clamp(0.42rem, 2.7vw, 0.8rem);
+    overflow-x: hidden;
+  }
+
+  .gui-link {
+    top: 0.4rem;
+    right: 0.5rem;
+    font-size: 0.68rem;
+    padding: 0.22rem 0.5rem;
+  }
+}
